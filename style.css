@@ -91,6 +91,14 @@ body {
         max-width: 100%;
         height: auto;
       }
+
+      .project-year {
+        font-family: Baskerville, serif;
+        font-variant-numeric: oldstyle-nums;
+        font-style: italic;
+        color: gray;
+        margin: 0;
+      }
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -139,5 +147,68 @@ body {
         grid-row: 2;
         margin: 0;
         font-size: 200%;
+    }
+
+    #projects-plot {
+      width: 20em;
+      display: block;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+    }
+    
+    .container svg {
+      flex: none;
+    }
+
+    .legend {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+      gap: 1em;
+      border: 1px solid gray;
+      padding: 1em;
+      margin: 0;
+      list-style: none;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    
+    .swatch {
+      display: inline-block;
+      aspect-ratio: 1 / 1;
+      width: 1em;
+      background-color: var(--color);
+      border-radius: 50%;
+    }
+    
+    &:has(path:hover) {
+      path:not(:hover) {
+        opacity: 0.5;
+      }
+    }
+
+    .selected {
+      --color: oklch(60% 45% 0) !important;
+    
+      &:is(path) {
+        fill: var(--color);
+      }
+    }
+
+    path {
+      transition: 300ms;
+      cursor: pointer;
+    }
+
+    .legend-item {
+      cursor: pointer;
     }
   }
