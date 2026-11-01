@@ -4,7 +4,13 @@ const projects = await fetchJSON('../lib/projects.json');
 const projectsContainer = document.querySelector('.projects');
 renderProjects(projects, projectsContainer, 'h2');
 const projectsTitle = document.querySelector('.projects-title');
-projectsTitle.textContent = `${projects.length} Projects`;
+//projectsTitle.textContent = `${projects.length} Projects`;
+
+function updateTitle(list) {
+    projectsTitle.textContent = `${list.length} ${list.length === 1 ? 'Project' : 'Projects'}`;
+}
+
+updateTitle(projects);
 
 // let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 // // let arc = arcGenerator({
@@ -91,10 +97,12 @@ function renderPieChart(projectsGiven) {
 
         if (selectedIndex === -1) {
             renderProjects(projects, projectsContainer, 'h2');
+            updateTitle(projects)
         } else {
             let year = data[selectedIndex].label;
             let yearProjects = projects.filter((p) => p.year === year);
             renderProjects(yearProjects, projectsContainer, 'h2');
+            updateTitle(projects)
         }
     }
 
@@ -126,5 +134,6 @@ searchInput.addEventListener('input', (event) => {
   });
   // render filtered projects
   renderProjects(filteredProjects, projectsContainer, 'h2');
+  updateTitle(filteredProjects)
   renderPieChart(filteredProjects)
 });

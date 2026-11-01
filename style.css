@@ -154,6 +154,10 @@ body {
       display: block;
     }
 
+    #projects-plot:empty { 
+      display: none; 
+    }
+
     .container {
       display: flex;
       align-items: center;
@@ -174,11 +178,16 @@ body {
       margin: 0;
       list-style: none;
     }
+
+    .legend:empty {
+      display: none;
+    }
     
     .legend-item {
       display: flex;
       align-items: center;
       gap: 0.5em;
+      cursor: pointer;
     }
     
     .swatch {
@@ -208,7 +217,9 @@ body {
       cursor: pointer;
     }
 
-    .legend-item {
-      cursor: pointer;
+    .search-bar {
+      margin-block: 1em;
+      width: 100%;
+      box-sizing: border-box;
     }
   }
