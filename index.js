@@ -7,7 +7,7 @@ const githubData = await fetchGitHubData('hellogoodbye2007');
 const profileStats = document.querySelector('#profile-stats');
 if (profileStats) {
     profileStats.innerHTML = `
-          <dl>
+          <dl class = "stats">
             <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
             <dt>Created at:</dt><dd>${new Date(githubData.created_at).toLocaleDateString()}</dd>
             <dt>Followers:</dt><dd>${githubData.followers}</dd>

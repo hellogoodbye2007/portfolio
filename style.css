@@ -1,120 +1,120 @@
 :root {
-  --color-accent: oklch(65% 50% 0);
-  accent-color: var(--color-accent);
-  color-scheme: light dark;
+    --color-accent: oklch(65% 50% 0);
+    accent-color: var(--color-accent);
+    color-scheme: light dark;
 }
 body {
     /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
+    and use the OS’s UI font as the website font
+    */
     font: 100%/1.5 system-ui;
     max-width: 150ch;
     margin-inline: auto;
     padding: 0 10ch 10ch 10ch;
-
+    
     .color-scheme {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 80%;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 80%;
     }
-
+    
     nav {
-      display: flex;
-      margin-bottom: 5ch;
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-      --border-color: oklch(50% 10% 200 / 40%);
-      border-bottom-color: var(--border-color);
-      
-      a {
-        flex: 1;
-        text-decoration: none;
-        color: inherit;
-        text-align: center;
-        padding: 0.5em;
-      }
-
-      a.current {
-        border-bottom-width: 0.4em;
+        display: flex;
+        margin-bottom: 5ch;
+        border-bottom-width: 1px;
         border-bottom-style: solid;
+        --border-color: oklch(50% 10% 200 / 40%);
         border-bottom-color: var(--border-color);
-        padding-bottom: 0.1em;
-        font-weight: bold;
-      }
-
-      a:hover {
-        background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-        border-bottom-width: 0.4em;
-        border-bottom-style: solid;
-        border-bottom-color: var(--color-accent);
-        padding-bottom: 0.1em;
-      }
+        
+        a {
+            flex: 1;
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+            padding: 0.5em;
+        }
+        
+        a.current {
+            border-bottom-width: 0.4em;
+            border-bottom-style: solid;
+            border-bottom-color: var(--border-color);
+            padding-bottom: 0.1em;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+            border-bottom-width: 0.4em;
+            border-bottom-style: solid;
+            border-bottom-color: var(--color-accent);
+            padding-bottom: 0.1em;
+        }
     }
-
+    
     input, textarea, button, select {
-      font: inherit;
+        font: inherit;
     }
     
     form {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1em;
-
-      label {
         display: grid;
-        grid-template-columns: subgrid;
-        grid-column: 1 / -1;
-      }
-
-      button {
-        grid-column: 1 / -1;
-      }
+        grid-template-columns: auto 1fr;
+        gap: 1em;
+        
+        label {
+            display: grid;
+            grid-template-columns: subgrid;
+            grid-column: 1 / -1;
+        }
+        
+        button {
+            grid-column: 1 / -1;
+        }
     }
-
+    
     .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-      gap: 1em;
-
-      article {
         display: grid;
-        grid-template-rows: subgrid;
-        grid-row: span 3;    
-      }
-
-      article h2 {
-        margin: 0;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      .project-year {
-        font-family: Baskerville, serif;
-        font-variant-numeric: oldstyle-nums;
-        font-style: italic;
-        color: gray;
-        margin: 0;
-      }
+        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+        gap: 1em;
+        
+        article {
+            display: grid;
+            grid-template-rows: subgrid;
+            grid-row: span 3;    
+        }
+        
+        article h2 {
+            margin: 0;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .project-year {
+            font-family: Baskerville, serif;
+            font-variant-numeric: oldstyle-nums;
+            font-style: italic;
+            color: gray;
+            margin: 0;
+        }
     }
-
+    
     h1, h2, h3, h4, h5, h6 {
-      line-height: 1.1;
-      text-wrap: balance;
+        line-height: 1.1;
+        text-wrap: balance;
     }
-
+    
     h1 {
-      font-size: 400%;
+        font-size: 400%;
     }
-
+    
     .myinfo {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1em;
-      padding-bottom: 5ch;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        padding-bottom: 5ch;
     }
     
     .myinfo h1 {
@@ -124,103 +124,104 @@ body {
     .myinfo h3 {
         margin: 0;
     }
-
+    
     .cv h3:not(.myinfo h3) {
-      color: blue;
-      font-style: italic
+        color: blue;
+        font-style: italic
     }
     
-    #profile-stats dl {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      margin: 0;
+    .stats {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        margin: 0;
     }
-  
-    #profile-stats dt {
+    
+    .stats dt {
         grid-row: 1;
         text-transform: uppercase;
         font-size: 80%;
         opacity: 0.7;
     }
     
-    #profile-stats dd {
+    .stats dd {
         grid-row: 2;
         margin: 0;
         font-size: 200%;
     }
-
+    
     #projects-plot {
-      width: 20em;
-      display: block;
+        width: 20em;
+        display: block;
     }
-
+    
     #projects-plot:empty { 
-      display: none; 
+        display: none; 
     }
-
+    
     .container {
-      display: flex;
-      align-items: center;
-      gap: 2em;
+        display: flex;
+        align-items: center;
+        gap: 2em;
     }
     
     .container svg {
-      flex: none;
+        flex: none;
     }
-
+    
     .legend {
-      flex: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
-      gap: 1em;
-      border: 1px solid gray;
-      padding: 1em;
-      margin: 0;
-      list-style: none;
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+        gap: 1em;
+        border: 1px solid gray;
+        padding: 1em;
+        margin: 0;
+        list-style: none;
     }
-
+    
     .legend:empty {
-      display: none;
+        display: none;
     }
     
     .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-      cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        cursor: pointer;
     }
     
     .swatch {
-      display: inline-block;
-      aspect-ratio: 1 / 1;
-      width: 1em;
-      background-color: var(--color);
-      border-radius: 50%;
+        display: inline-block;
+        aspect-ratio: 1 / 1;
+        width: 1em;
+        background-color: var(--color);
+        border-radius: 50%;
     }
     
     &:has(path:hover) {
-      path:not(:hover) {
-        opacity: 0.5;
-      }
+        path:not(:hover) {
+            opacity: 0.5;
+        }
     }
-
-    .selected {
-      --color: oklch(60% 45% 0) !important;
     
-      &:is(path) {
-        fill: var(--color);
-      }
+    .selected {
+        --color: oklch(60% 45% 0) !important;
+        
+        &:is(path) {
+            fill: var(--color);
+        }
     }
-
+    
     path {
-      transition: 300ms;
-      cursor: pointer;
+        transition: 300ms;
+        cursor: pointer;
     }
-
+    
     .search-bar {
-      margin-block: 1em;
-      width: 100%;
-      box-sizing: border-box;
-      border: 1px solid gray;
+        margin-block: 1em;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid gray;
     }
-  }
+}
