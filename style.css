@@ -149,7 +149,70 @@ body {
         margin: 0;
         font-size: 200%;
     }
+
+    .gridlines {
+        stroke: currentColor;
+        stroke-opacity: 0.15;
+    }
+
+    .gridlines .domain {
+        display: none;
+    }
     
+    dl.info {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.25em 1em;
+        margin: 0;
+        transition-duration: 500ms;
+        transition-property: opacity, visibility;
+    
+        dt {
+            grid-column: 1;
+            margin: 0;
+            font-size: 80%;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+    
+        dd {
+            grid-column: 2;
+            margin: 0;
+            font-weight: bold;
+        }
+    }
+
+    dl.info[hidden]:not(:hover, :focus-within) {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .tooltip {
+        position: fixed;
+        top: 1em;
+        left: 1em;
+
+        padding: 0.75em 1em;
+        background-color: color-mix(in oklch, canvas 85%, transparent);
+        backdrop-filter: blur(8px);
+        border-radius: 0.5em;
+        box-shadow: 0 4px 12px rgb(0 0 0 / 0.2);
+    }
+
+    circle {
+        transition: 200ms;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+
+    circle.selected {
+        fill: #ff6b6b;
+    }
+    
+    circle:hover {
+        transform: scale(1.5);
+    }
+
     #projects-plot {
         width: 20em;
         display: block;
