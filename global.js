@@ -1,7 +1,7 @@
 console.log('IT’S ALIVE!');
 
 function $$(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
+    return Array.from(context.querySelectorAll(selector));
 }
 
 // let currentLink = navLinks.find(
@@ -9,14 +9,15 @@ function $$(selector, context = document) {
 // );
 // currentLink?.classList.add('current');
 const BASE_PATH = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
-  ? "/"                  // Local server
-  : "/portfolio/";         // GitHub Pages repo name
+    ? "/"                  // Local server
+    : "/portfolio/";         // GitHub Pages repo name
 
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
     { url: 'cv.html', title: 'Resume'},
     { url: 'contact/', title: 'Contact' },
+    { url: 'meta/', title: 'Meta'},
     { url: 'https://github.com/hellogoodbye2007', title: 'GitHub'}
 ];
 let nav = document.createElement('nav');
