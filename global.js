@@ -15,10 +15,10 @@ const BASE_PATH = (location.hostname === "localhost" || location.hostname === "1
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
-    { url: 'cv.html', title: 'Resume'},
+    { url: 'cv.html', title: 'Resume' },
     { url: 'contact/', title: 'Contact' },
-    { url: 'meta/', title: 'Meta'},
-    { url: 'https://github.com/hellogoodbye2007', title: 'GitHub'}
+    { url: 'meta/', title: 'Meta' },
+    { url: 'https://github.com/hellogoodbye2007', title: 'GitHub' }
 ];
 let nav = document.createElement('nav');
 document.body.prepend(nav);
@@ -27,7 +27,7 @@ for (let p of pages) {
     url = !url.startsWith('http') ? BASE_PATH + url : url;
     let title = p.title;
     //nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
-    
+
     let a = document.createElement('a');
     a.href = url;
     a.textContent = title;
@@ -58,7 +58,7 @@ document.body.insertAdjacentHTML(
 );
 
 let select = document.querySelector('.color-scheme select');
-if('colorScheme' in localStorage) {
+if ('colorScheme' in localStorage) {
     document.documentElement.style.setProperty('color-scheme', localStorage.colorScheme);
     select.value = localStorage.colorScheme
 }
@@ -110,8 +110,9 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
             <div>
                 <p>${project.description}</p>
                 <p class="project-year">c. ${project.year}</p>
+                ${project.url ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">View project</a>` : ''}
             </div>
-        `;
+          `;
         containerElement.appendChild(article);
     }
 }

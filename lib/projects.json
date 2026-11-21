@@ -3,13 +3,15 @@
 		"title": "DSC 106 Project 2",
 		"year": "2026",
 		"image": "https://github.com/srinisriram/Project02/blob/main/visualizations/opposing_1/fig1_rank_change_substantiated.png?raw=true",
-		"description": "Project 2 was focused on creating visualizations that supported and opposed the effectiveness of a police review system, this visualization portrayed ineffectiveness."
+		"description": "Project 2 was focused on creating visualizations that supported and opposed the effectiveness of a police review system, this visualization portrayed ineffectiveness.",
+		"url": "https://srinisriram.github.io/Project02-Website/index.html"
 	},
 	{
 		"title": "Song Explicitness",
 		"year": "2026",
 		"image": "https://github.com/hellogoodbye2007/SongExplicitness/blob/main/assets/confusionmatrix.png?raw=true",
-		"description": "DSC 80 final project where I looked into a relation between song explicitness and other variables, this is a confusion matrix from that project."
+		"description": "DSC 80 final project where I looked into a relation between song explicitness and other variables, this is a confusion matrix from that project.",
+		"url": "https://hellogoodbye2007.github.io/SongExplicitness/"
 	},
 	{
 		"title": "Dictator Simulator",
@@ -70,5 +72,12 @@
 		"year": "2020",
 		"image": "https://vis-society.github.io/labs/2/images/empty.svg",
 		"description": "Tempore, eveniet minus velit, earum aperiam necessitatibus repellendus provident accusamus illum officiis doloribus, eum saepe est aut numquam distinctio pariatur natus totam repellat. Numquam nulla libero sapiente magnam nostrum ex."
+	},
+	{
+		"title": "Bikewatching",
+		"year": "2026",
+		"image": "../images/bikewatching.png",
+		"description": "Interactive map of biking trips.",
+		"url": "https://hellogoodbye2007.github.io/BostonBikeBeholding/"
 	}
 ]
